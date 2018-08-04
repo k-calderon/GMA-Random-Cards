@@ -33,19 +33,38 @@ var randCard = function (genre, override) {
     var target = document.getElementById("random-card")
     target.innerHTML = "";
     target.innerHTML = divHTML;
-    log("random card generated");
+    log("random " + genre + " card generated");
 };
 
-var randCardBttnPressed = function() {
-    randCard(genres[0]);
-    log("Random Card button pressed");
-};
+var randBaseCardBttnPressed = function(genre) {
+        randCard(genres[0]);
+        log("Random Base Card button pressed");
+    },
+    randSailCardBttnPressed = function(genre) {
+        randCard(genres[1]);
+        log("Random Base Card button pressed");
+    },
+    randFantasyCardBttnPressed = function(genre) {
+        randCard(genres[2]);
+        log("Random Base Card button pressed");
+    },
+    randSciFiCardBttnPressed = function(genre) {
+        randCard(genres[3]);
+        log("Random Base Card button pressed");
+    },
+    randSteampunkCardBttnPressed = function(genre) {
+        randCard(genres[4]);
+        log("Random Base Card button pressed");
+    };
 
 var setup = {
     buttons : function() {
         //var genre = document.getElementById("") **not done yet
-        document.getElementById("random-card-button").addEventListener("click", randCardBttnPressed);
-
+        document.getElementById("random-base-card-button").addEventListener("click", randBaseCardBttnPressed);
+        document.getElementById("random-sail-card-button").addEventListener("click", randSailCardBttnPressed);
+        document.getElementById("random-fantasy-card-button").addEventListener("click", randFantasyCardBttnPressed);
+        document.getElementById("random-scifi-card-button").addEventListener("click", randSciFiCardBttnPressed);
+        document.getElementById("random-steampunk-card-button").addEventListener("click", randSteampunkCardBttnPressed);        
     }
 };
 
