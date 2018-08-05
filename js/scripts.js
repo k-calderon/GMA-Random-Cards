@@ -23,13 +23,16 @@ var genres = [
 var randCard = function (genre, override) {
     var genreFolder = "",
         genreFilePart = "";
+    /*Checks to see if genre was passed, if so, it sets the genreFolder to the first element of a the genre array.
+    Otherwise it defaults to base */
     genre ? genreFolder = genre[0] : genreFolder = "base";
-    //var genreFolder = genre[0] || "base";
+    /*Checks to see if genre was passed, if so, it sets the genreFilePart to the second element of a the genre array.
+    Otherwise it defaults to Base */
     genre ? genreFilePart = genre[1] : genreFilePart = "Base";
-    //var genreFilePart = genre[1] || "Base";
     var roll = override || randIntBetween(1, 120);
+    //assembles the filename of the randomly rolled card image
     var card = "GMA "+ genreFilePart +" VTT_Part" + roll + ".jpg";
-    var divHTML =   '<img src="cards\/' + genreFolder + '\/' + card + '">';
+    var divHTML =   '<img class="card-image" src="cards\/' + genreFolder + '\/' + card + '">';
     var target = document.getElementById("random-card")
     target.innerHTML = "";
     target.innerHTML = divHTML;
@@ -42,24 +45,23 @@ var randBaseCardBttnPressed = function(genre) {
     },
     randSailCardBttnPressed = function(genre) {
         randCard(genres[1]);
-        log("Random Base Card button pressed");
+        log("Random Age of Sail Card button pressed");
     },
     randFantasyCardBttnPressed = function(genre) {
         randCard(genres[2]);
-        log("Random Base Card button pressed");
+        log("Random Fantasy Card button pressed");
     },
     randSciFiCardBttnPressed = function(genre) {
         randCard(genres[3]);
-        log("Random Base Card button pressed");
+        log("Random Sci Fi Card button pressed");
     },
     randSteampunkCardBttnPressed = function(genre) {
         randCard(genres[4]);
-        log("Random Base Card button pressed");
+        log("Random Steampunk Card button pressed");
     };
 
 var setup = {
     buttons : function() {
-        //var genre = document.getElementById("") **not done yet
         document.getElementById("random-base-card-button").addEventListener("click", randBaseCardBttnPressed);
         document.getElementById("random-sail-card-button").addEventListener("click", randSailCardBttnPressed);
         document.getElementById("random-fantasy-card-button").addEventListener("click", randFantasyCardBttnPressed);
