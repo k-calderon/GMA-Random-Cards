@@ -17,7 +17,9 @@ var genres = [
     ["ageofsail", "Age of Sail"],
     ["fantasy","Fantasy"],
     ["scifi", "SciFi"],
-    ["steampunk", "Steampunk"]
+    ["steampunk", "Steampunk"],
+    ["demonhunters", "Demon Hunters"],
+    ["horror", "Horror"]
 ];
 
 var randCard = function (genre, override) {
@@ -58,6 +60,14 @@ var randBaseCardBttnPressed = function(genre) {
     randSteampunkCardBttnPressed = function(genre) {
         randCard(genres[4]);
         log("Random Steampunk Card button pressed");
+    },
+    randDemonHuntersCardBttnPressed = function(genre) {
+        randCard(genres[5]);
+        log("Random Demon Hunters button pressed");
+    },
+    randHorrorCardBttnPressed = function(genre) {
+        randCard(genres[6]);
+        log("Random Horror button pressed");
     };
 
 var setup = {
@@ -67,6 +77,8 @@ var setup = {
         document.getElementById("random-fantasy-card-button").addEventListener("click", randFantasyCardBttnPressed);
         document.getElementById("random-scifi-card-button").addEventListener("click", randSciFiCardBttnPressed);
         document.getElementById("random-steampunk-card-button").addEventListener("click", randSteampunkCardBttnPressed);        
+        document.getElementById("random-demonhunters-card-button").addEventListener("click", randDemonHuntersCardBttnPressed);
+        document.getElementById("random-horror-card-button").addEventListener("click", randHorrorCardBttnPressed);
     }
 };
 
