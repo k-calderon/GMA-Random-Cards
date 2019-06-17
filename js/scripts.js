@@ -99,6 +99,7 @@ var setup = {
 
 var initialSetup = function() {
   setup.buttons();
+  randCard();
 };
 
 initialSetup();
