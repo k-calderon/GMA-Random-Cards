@@ -1,8 +1,14 @@
 "use strict";
-
-var log = function(param) {
-  console.log(param);
+var loadTime = Date.now();
+var d = document;
+var w = Window;
+var log = function(msg, obj, name) {
+  let now = Date.now();
+  let timer = now - loadTime;
+  name = name || "Generic";
+  console.log(timer + "ms> " + name + "> " + msg, obj);  
 };
+
 var randIntBetween = function(min, max) {
   /* return a random number between the min and max. The min 
     and the max do not have to start with 1 */
@@ -42,7 +48,7 @@ var randCard = function(genre, override) {
   log("random " + genre + " card generated");
 };
 
-var randBaseCardBttnPressed = function(genre) {
+/*var randBaseCardBttnPressed = function(genre) {
     randCard(genres[0]);
     log("Random Base Card button pressed");
   },
@@ -69,11 +75,11 @@ var randBaseCardBttnPressed = function(genre) {
   randHorrorCardBttnPressed = function(genre) {
     randCard(genres[6]);
     log("Random Horror button pressed");
-  };
+  };*/
 
 var setup = {
   buttons: function() {
-    document
+    /*document
       .getElementById("random-base-card-button")
       .addEventListener("click", randBaseCardBttnPressed);
     document
@@ -93,7 +99,7 @@ var setup = {
       .addEventListener("click", randDemonHuntersCardBttnPressed);
     document
       .getElementById("random-horror-card-button")
-      .addEventListener("click", randHorrorCardBttnPressed);
+      .addEventListener("click", randHorrorCardBttnPressed);*/
   }
 };
 
