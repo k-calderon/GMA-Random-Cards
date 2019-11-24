@@ -100,10 +100,34 @@ var setup = {
     document
       .getElementById("random-horror-card-button")
       .addEventListener("click", randHorrorCardBttnPressed);*/
+  },
+  navSlide: () => {
+    const burger = d.querySelector(".burger");
+    const nav = d.querySelector(".nav-links");
+    const navLinks = d.querySelectorAll(".nav-links li");
+  
+    // Toggle nav
+    burger.addEventListener("click", () => {
+      nav.classList.toggle("nav-active");
+  
+      // Animate links
+      navLinks.forEach((link, index) => {
+        if (link.style.animation) {
+          link.style.animation = "";
+        } else {
+          link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+        }
+      });
+      
+      // Burger animation
+      burger.classList.toggle("toggle");
+    });  
   }
 };
 
+
 var initialSetup = function() {
+  setup.navSlide();
   setup.buttons();
   randCard();
 };
