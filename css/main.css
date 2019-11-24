@@ -19,7 +19,7 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 8vh;
+  min-height: 5vh;
   background-color: #5d4954;
   color: lightgray;
   font-family: Roboto, sans-serif;
@@ -49,8 +49,8 @@ nav {
   width: 50%;
   position: absolute;
   left: 0px;
-  height: 92vh;
-  top: 8vh;
+  height: 95vh;
+  top: 5vh;
   background-color: #5d4954;
   display: flex;
   -webkit-box-orient: vertical;

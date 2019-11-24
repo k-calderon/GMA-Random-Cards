@@ -1,5 +1,5 @@
 $text-color-primary: black;
-$text-color-secondary: gray;
+$text-color-secondary: rgb(211, 211, 211);;
 $text-color-tertiary: rgb(64, 64, 64);
 $nav-color-bg: #5d4954;
 
@@ -16,16 +16,16 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 8vh;
+  min-height: 5vh;
   background-color: $nav-color-bg;
-  color: rgb(211, 211, 211);
+  color: $text-color-secondary;
   font-family: Roboto, sans-serif;
 }
 .logo {
   display: flex;
   flex-grow: 1;
   justify-content: space-around;
-  color: rgb(211, 211, 211);
+  color: $text-color-secondary;
   text-transform: uppercase;
   letter-spacing: 5px;
   font-size: 20px;
@@ -36,9 +36,9 @@ nav {
   width: 50%;
   position: absolute;
   left: 0px;
-  height: 92vh;
-  top: 8vh;
-  background-color: #5d4954;
+  height: 95vh;
+  top: 5vh;
+  background-color: $nav-color-bg;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,7 +50,7 @@ nav {
     list-style: none;
   }
   a {
-    color: rgb(211, 211, 211);
+    color: $text-color-secondary;
     text-decoration: none;
     letter-spacing: 3px;
     font-weight: bold;
@@ -64,7 +64,7 @@ nav {
   div {
     width: 25px;
     height: 3px;
-    background-color: rgb(211, 211, 211);
+    background-color: $text-color-secondary;
     margin: 5px;
     transition: all 0.3s ease;
   }
