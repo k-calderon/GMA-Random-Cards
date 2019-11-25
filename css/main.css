@@ -20,7 +20,7 @@ nav {
       -ms-flex-align: center;
           align-items: center;
   min-height: 5vh;
-  background-color: #5d4954;
+  background-color: #617588;
   color: lightgray;
   font-family: Roboto, sans-serif;
 }
@@ -51,7 +51,7 @@ nav {
   left: 0px;
   height: 95vh;
   top: 5vh;
-  background-color: #5d4954;
+  background-color: #617588;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;

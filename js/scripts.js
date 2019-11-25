@@ -18,36 +18,47 @@ var randIntBetween = function(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
+/* slug, file name part, label */
 var genres = [
-  ["base", "Base"],
-  ["ageofsail", "Age of Sail"],
-  ["fantasy", "Fantasy"],
-  ["scifi", "SciFi"],
-  ["steampunk", "Steampunk"],
-  ["demonhunters", "Demon Hunters"],
-  ["horror", "Horror"]
+  ["base", "Base", "Base"],
+  ["ageofsail", "Age of Sail", "Age of Sail"],
+  ["fantasy", "Fantasy", "Fantasy"],
+  ["scifi", "SciFi", "Science Fiction"],
+  ["steampunk", "Steampunk", "Steampunk"],
+  ["demonhunters", "Demon Hunters", "Demon Hunters"],
+  ["horror", "Horror", "Horror"]
 ];
+var currentGenre = genres[0];
 
 var randCard = function(genre, override) {
   var genreFolder = "",
-    genreFilePart = "";
+    genreFilePart = "",
+    card = "",
+    divHTML = "",
+    target = "";
   /*Checks to see if genre was passed, if so, it sets the genreFolder to the first element of a the genre array.
     Otherwise it defaults to base */
-  genre ? (genreFolder = genre[0]) : (genreFolder = "base");
+  (genre !== null  && typeof genre === "number") ? (genreFolder = genres[genre][0]) : (genreFolder = currentGenre[0]);
   /*Checks to see if genre was passed, if so, it sets the genreFilePart to the second element of a the genre array.
     Otherwise it defaults to Base */
-  genre ? (genreFilePart = genre[1]) : (genreFilePart = "Base");
+  (genre !== null  && typeof genre === "number") ? (genreFilePart = genres[genre][1]) : (genreFilePart = currentGenre[1]);
+
+
   var roll = override || randIntBetween(1, 120);
   //assembles the filename of the randomly rolled card image
-  var card = "GMA " + genreFilePart + " VTT_Part" + roll + ".jpg";
-  var divHTML =
+  card = "GMA " + genreFilePart + " VTT_Part" + roll + ".jpg";
+  divHTML =
     '<img class="card-image" src="cards/' + genreFolder + "/" + card + '">';
-  var target = document.getElementById("random-card");
+  target = document.getElementById("random-card");
   target.innerHTML = "";
   target.innerHTML = divHTML;
-  log("random " + genre + " card generated");
+  log("random " + genre[2] + " card generated");
 };
 
+var changeGenre = function(newGenre){
+  currentGenre = genres[newGenre];
+  randCard(newGenre);
+};
 /*var randBaseCardBttnPressed = function(genre) {
     randCard(genres[0]);
     log("Random Base Card button pressed");
@@ -77,30 +88,7 @@ var randCard = function(genre, override) {
     log("Random Horror button pressed");
   };*/
 
-var setup = {
-  buttons: function() {
-    /*document
-      .getElementById("random-base-card-button")
-      .addEventListener("click", randBaseCardBttnPressed);
-    document
-      .getElementById("random-sail-card-button")
-      .addEventListener("click", randSailCardBttnPressed);
-    document
-      .getElementById("random-fantasy-card-button")
-      .addEventListener("click", randFantasyCardBttnPressed);
-    document
-      .getElementById("random-scifi-card-button")
-      .addEventListener("click", randSciFiCardBttnPressed);
-    document
-      .getElementById("random-steampunk-card-button")
-      .addEventListener("click", randSteampunkCardBttnPressed);
-    document
-      .getElementById("random-demonhunters-card-button")
-      .addEventListener("click", randDemonHuntersCardBttnPressed);
-    document
-      .getElementById("random-horror-card-button")
-      .addEventListener("click", randHorrorCardBttnPressed);*/
-  },
+var setup = {  
   navSlide: () => {
     const burger = d.querySelector(".burger");
     const nav = d.querySelector(".nav-links");
@@ -122,6 +110,38 @@ var setup = {
       // Burger animation
       burger.classList.toggle("toggle");
     });  
+  },
+  buttons: function() {
+    var randomButton = d.getElementById("random-card-button");
+    randomButton.addEventListener("click", randCard);
+    /*genres.forEach((genre)=>{
+      let navLinks = d.getElementById("nav-links");
+      let newLi = d.createElement("li");
+      newLi.setAttribute("id", `nav-link-${genre[0]}`);
+      newLi.innerHTML =`<a href="#">${genre[2]}</a>`;
+      navLinks.appendChild(newLi);
+    });*/
+    /*document
+      .getElementById("random-base-card-button")
+      .addEventListener("click", randBaseCardBttnPressed);
+    document
+      .getElementById("random-sail-card-button")
+      .addEventListener("click", randSailCardBttnPressed);
+    document
+      .getElementById("random-fantasy-card-button")
+      .addEventListener("click", randFantasyCardBttnPressed);
+    document
+      .getElementById("random-scifi-card-button")
+      .addEventListener("click", randSciFiCardBttnPressed);
+    document
+      .getElementById("random-steampunk-card-button")
+      .addEventListener("click", randSteampunkCardBttnPressed);
+    document
+      .getElementById("random-demonhunters-card-button")
+      .addEventListener("click", randDemonHuntersCardBttnPressed);
+    document
+      .getElementById("random-horror-card-button")
+      .addEventListener("click", randHorrorCardBttnPressed);*/
   }
 };
 
