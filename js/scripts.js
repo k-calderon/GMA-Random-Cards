@@ -36,9 +36,15 @@ var randCard = function(genre, override) {
     card = "",
     divHTML = "",
     target = "";
+    if (genre !==null && typeof genre === "number"){
+      (genreFolder = genres[genre][0]);
+      (genreFilePart = genres[genre][1]);
+    } else {
+      genreFolder = currentGenre[0];
+      genreFilePart = currentGenre[1];
+    }
   /*Checks to see if genre was passed, if so, it sets the genreFolder to the first element of a the genre array.
     Otherwise it defaults to base */
-  (genre !== null  && typeof genre === "number") ? (genreFolder = genres[genre][0]) : (genreFolder = currentGenre[0]);
   /*Checks to see if genre was passed, if so, it sets the genreFilePart to the second element of a the genre array.
     Otherwise it defaults to Base */
   (genre !== null  && typeof genre === "number") ? (genreFilePart = genres[genre][1]) : (genreFilePart = currentGenre[1]);
@@ -52,12 +58,15 @@ var randCard = function(genre, override) {
   target = document.getElementById("random-card");
   target.innerHTML = "";
   target.innerHTML = divHTML;
-  log("random " + genre[2] + " card generated");
+  log("random " + currentGenre[2] + " card generated");
 };
 
 var changeGenre = function(newGenre){
+  var logo = d.getElementById("logo");
   currentGenre = genres[newGenre];
   randCard(newGenre);
+  logo.innerHTML =  `<h4>${currentGenre[2]}<h4>`
+  log("Genre changed> New genre:", currentGenre[2]);
 };
 /*var randBaseCardBttnPressed = function(genre) {
     randCard(genres[0]);
