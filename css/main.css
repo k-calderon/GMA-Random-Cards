@@ -19,7 +19,7 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 5vh;
+  min-height: 10vh;
   background-color: #617588;
   color: lightgray;
   font-family: Roboto, sans-serif;
@@ -49,8 +49,8 @@ nav {
   width: 50%;
   position: absolute;
   left: 0px;
-  height: 95vh;
-  top: 5vh;
+  height: 90vh;
+  top: 10vh;
   background-color: #617588;
   display: flex;
   -webkit-box-orient: vertical;
@@ -149,5 +149,40 @@ nav {
 .toggle .line3 {
   -webkit-transform: rotate(45deg) translate(-5px, -6px);
           transform: rotate(45deg) translate(-5px, -6px);
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.btn {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 2vh 35%;
+  font-size: 5vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  color: #555555;
+  background-color: #c7c7c7;
+}
+
+#random-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=main.css.map */

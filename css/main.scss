@@ -1,7 +1,8 @@
 $text-color-primary: black;
-$text-color-secondary: rgb(211, 211, 211);;
-$text-color-tertiary: rgb(64, 64, 64);
+$text-color-secondary: rgb(211, 211, 211);
+$text-color-tertiary: rgb(85, 85, 85);
 $nav-color-bg: #617588;
+$btn-color-bg: #c7c7c7;
 
 * {
   margin: 0px;
@@ -16,7 +17,7 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 5vh;
+  min-height: 10vh;
   background-color: $nav-color-bg;
   color: $text-color-secondary;
   font-family: Roboto, sans-serif;
@@ -36,8 +37,8 @@ nav {
   width: 50%;
   position: absolute;
   left: 0px;
-  height: 95vh;
-  top: 5vh;
+  height: 90vh;
+  top: 10vh;
   background-color: $nav-color-bg;
   display: flex;
   flex-direction: column;
@@ -104,4 +105,24 @@ nav {
   .line3 {
     transform: rotate(45deg) translate(-5px, -6px);
   }
+}
+main{
+  display: flex;
+  flex-direction: column;
+}
+.btn {
+  cursor: pointer;
+  display: flex;
+  margin: 2vh 35%;
+  font-size: 5vh;
+  // padding: 2vh 2vh;
+  // height: 2vh;
+  justify-content: center;
+  align-content: space-around;
+  color: $text-color-tertiary;
+  background-color: $btn-color-bg;
+}
+#random-card {
+  display: flex;
+  justify-content: center;
 }
