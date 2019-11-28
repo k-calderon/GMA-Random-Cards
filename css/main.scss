@@ -25,11 +25,11 @@ nav {
 .logo {
   display: flex;
   flex-grow: 1;
-  justify-content: space-around;
+  justify-content: center;
   color: $text-color-secondary;
   text-transform: uppercase;
   letter-spacing: 5px;
-  font-size: 20px;
+  font-size: 1.5vh;
 }
 .nav-links {
   display: flex;
@@ -55,18 +55,18 @@ nav {
     text-decoration: none;
     letter-spacing: 3px;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 1.5vh;
   }
 }
 .burger {
   display: block;
   cursor: pointer;
-  margin: 0vh 1vh;
+  margin: 0vh 2vh;
   div {
-    width: 25px;
-    height: 3px;
+    width: 50px;
+    height: 6px;
     background-color: $text-color-secondary;
-    margin: 5px;
+    margin: 10px;
     transition: all 0.3s ease;
   }
 }
@@ -97,13 +97,13 @@ nav {
 
 .toggle {
   .line1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
+    transform: rotate(-45deg) translate(-10px, 12px);
   }
   .line2 {
     opacity: 0;
   }
   .line3 {
-    transform: rotate(45deg) translate(-5px, -6px);
+    transform: rotate(45deg) translate(-10px, -12px);
   }
 }
 main{
@@ -113,9 +113,9 @@ main{
 .btn {
   cursor: pointer;
   display: flex;
-  margin: 2vh 35%;
-  font-size: 5vh;
-  // padding: 2vh 2vh;
+  margin: 2vh 25%;
+  font-size: 3vh;
+  padding: 2vh 2vh;
   // height: 2vh;
   justify-content: center;
   align-content: space-around;

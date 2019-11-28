@@ -65,7 +65,7 @@ var changeGenre = function(newGenre){
   var logo = d.getElementById("logo");
   currentGenre = genres[newGenre];
   randCard(newGenre);
-  logo.innerHTML =  `<h4>${currentGenre[2]}<h4>`
+  logo.innerHTML =  `<h2>${currentGenre[2]}<h2>`
   log("Genre changed> New genre:", currentGenre[2]);
 };
 /*var randBaseCardBttnPressed = function(genre) {
